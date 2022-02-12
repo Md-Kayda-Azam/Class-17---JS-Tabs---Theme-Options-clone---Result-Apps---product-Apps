@@ -5,8 +5,10 @@
 	<title>Development Area</title>
 	<!-- ALL CSS FILES  -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 	<link rel="stylesheet" href="assets/css/responsive.css">
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./CSS/rsstyle.css">
 	<link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
@@ -24,7 +26,7 @@
 	<div class="container my-5">
 		<div class="row">
 			<div class="col-md-4">
-				<div class="card my-5">
+				<div class="card shadow my-5">
 					<div class="card-header">
 						<h2>Add new student</h2>						
 					</div>
@@ -33,14 +35,21 @@
 							<div class="form-group mb-3">
 								<input class="form-control" type="text" placeholder="Student Name">
 							</div>
-							<div class="form-group mb-3">
-								<input class="form-control" type="text" placeholder="Roll Number">
+							<div class="row">
+								<div class="form-group mb-3 col-6">
+									<input class="form-control" type="text" placeholder="Roll Number">
+								</div>
+								<div class="form-group mb-3 col-6">
+									<input class="form-control" type="text" placeholder="Reg Number">
+								</div>
 							</div>
-							<div class="form-group mb-3">
-								<input class="form-control" type="text" placeholder="Class">
-							</div>
-							<div class="form-group mb-3">
-								<input class="form-control" type="text" placeholder="Photo">
+							<div class="row">
+								<div class="form-group mb-3 col-6">
+									<input class="form-control" type="text" placeholder="Class">
+								</div>
+								<div class="form-group mb-3 col-6">
+									<input class="form-control" type="text" placeholder="Photo">
+								</div>
 							</div>
 							<div class="form-group mb-3">
 								<input name="gender" type="radio" value="Male" id="male"> <label for="male">Male</label>
@@ -48,23 +57,29 @@
 							</div>
 							Marks 
 							<hr>
-							<div class="form-group mb-3">
-								<input class="form-control" id="ban" type="text" placeholder="Bangla">
+							<div class="row">
+								<div class="form-group mb-3 col-6">
+									<input class="form-control" id="ban" type="text" placeholder="Bangla">
+								</div>
+								<div class="form-group mb-3 col-6">
+									<input class="form-control" type="text" placeholder="English">
+								</div>
 							</div>
-							<div class="form-group mb-3">
-								<input class="form-control" type="text" placeholder="English">
+							<div class="row">
+								<div class="form-group mb-3 col-6">
+									<input class="form-control" type="text" placeholder="Math">
+								</div>
+								<div class="form-group mb-3 col-6">
+									<input class="form-control" type="text" placeholder="Science">
+								</div>
 							</div>
-							<div class="form-group mb-3">
-								<input class="form-control" type="text" placeholder="Math">
-							</div>
-							<div class="form-group mb-3">
-								<input class="form-control" type="text" placeholder="Science">
-							</div>
-							<div class="form-group mb-3">
-								<input class="form-control" type="text" placeholder="Social Science">
-							</div>
-							<div class="form-group mb-3">
-								<input class="form-control" type="text" placeholder="Religion">
+							<div class="row">
+								<div class="form-group mb-3 col-6">
+									<input class="form-control" type="text" placeholder="Social Science">
+								</div>
+								<div class="form-group mb-3 col-6">
+									<input class="form-control" type="text" placeholder="Religion">
+								</div>
 							</div>
 							<div class="form-group mb-3">
 								<input class="btn btn-primary w-100" type="submit" value="Add new student">
@@ -77,7 +92,7 @@
 				<div class="card my-5">
 					<div class="card-body">
 						<input id="search_box" type="text">
-						<button class="btn btn-sm btn-primary">Search</button>
+						<button class="btn btn-sm btn-primary">Roll Search</button>
 						<hr>
 						<table class="table table-striped">
 							<thead>
@@ -85,6 +100,7 @@
 									<th>#</th>
 									<th>Name</th>
 									<th>Roll</th>
+									<th>Reg</th>
 									<th>Class</th>
 									<th>Gender</th>
 									<th>Grade</th>

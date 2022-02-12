@@ -8,6 +8,7 @@ student_form.addEventListener('submit', function(e){
 
     let name = student_form.querySelector("input[placeholder='Student Name']"); 
     let roll = student_form.querySelector("input[placeholder='Roll Number']"); 
+    let reg = student_form.querySelector("input[placeholder='Reg Number']"); 
     let student_class = student_form.querySelector("input[placeholder='Class']"); 
     let photo = student_form.querySelector("input[placeholder='Photo']"); 
     let gender = student_form.querySelector("input[type='radio']:checked");  
@@ -31,6 +32,7 @@ student_form.addEventListener('submit', function(e){
         storate_data.push({
             name : name.value, 
             roll : roll.value, 
+            reg : reg.value, 
             className : student_class.value,
             gender : gender.value,
             photo : photo.value,
@@ -46,6 +48,7 @@ student_form.addEventListener('submit', function(e){
 
         student_form.querySelector("input[placeholder='Student Name']").value = ''; 
         student_form.querySelector("input[placeholder='Roll Number']").value = ''; 
+        student_form.querySelector("input[placeholder='Reg Number']").value = ''; 
         student_form.querySelector("input[placeholder='Class']").value = ''; 
         student_form.querySelector("input[placeholder='Photo']").value = '';     
         student_form.querySelector("input[placeholder='Bangla']").value = '';  
@@ -77,14 +80,15 @@ function allStudentData(){
                 <td>${ index + 1 }</td>
                 <td>${ student.name }</td>
                 <td>${ student.roll }</td>
+                <td>${ student.reg }</td>
                 <td>${ student.className }</td>
                 <td>${ student.gender }</td>
                 <td> A </td>
                 <td> 4.8 </td>
-                <td><img style="width:50px; height:50px;object-fit:cover;" src="${ student.photo }"></td>
+                <td><img style="border-radius:50%; width:50px; height:50px;object-fit:cover;" src="${ student.photo }"></td>
                 <td>
-                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" onclick="getSingleResult(${index})" data-bs-target="#student_single_modal" >View</button>
-                    <button onclick="deleteStudent(${ index })" class="btn btn-danger btn-sm">Delete</button>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" onclick="getSingleResult(${index})" data-bs-target="#student_single_modal" ><i class="fa-solid fa-eye-slash"></i></button>
+                    <button onclick="deleteStudent(${ index })" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
             </tr>
         `;
@@ -120,7 +124,7 @@ function getSingleResult(index){
     let result = new Result;
     let storage_data = dataGet('result_apps');
     student_result_data.innerHTML = `
-            <img class="shadow" src="${ storage_data[index].photo }" alt="">
+            <img class="shadow" style="" src="${ storage_data[index].photo }" alt="">
             <h2>${ storage_data[index].name }</h2>
             <hr>
             <table class="table table-striped table-bordered">
@@ -208,14 +212,15 @@ search_box.addEventListener('keyup', function(){
                 <td>${ index + 1 }</td>
                 <td>${ student.name }</td>
                 <td>${ student.roll }</td>
+                <td>${ student.reg }</td>
                 <td>${ student.className }</td>
                 <td>${ student.gender }</td>
                 <td> A </td>
                 <td> 4.8 </td>
                 <td><img style="width:50px; height:50px;object-fit:cover;" src="${ student.photo }"></td>
                 <td>
-                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" onclick="getSingleResult(${index})" data-bs-target="#student_single_modal" >View</button>
-                    <button onclick="deleteStudent(${ index })" class="btn btn-danger btn-sm">Delete</button>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" onclick="getSingleResult(${index})" data-bs-target="#student_single_modal" ><i class="fa-solid fa-eye-slash"></i></button>
+                    <button onclick="deleteStudent(${ index })" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
             </tr>
         `;
